@@ -9,7 +9,6 @@ while((userNumber <1 || userNumber >5)){
     userNumber= parseInt( prompt("Inserisci un numero compreso tra 1 e 5"));
 }
 const userChoice= prompt("Secondo te, uscirà un numero pari o dispari?");
-console.log(userChoice)
 // CALL DELLE FUNCTION IN ORDINE DI ESECUZIONE
 randomN= pcNumber(randomN);
 userPcsum= sumPcUser(userNumber,randomN)
@@ -17,6 +16,7 @@ pariDispari= pariodispari(userPcsum);
 wonorNot= indovinatoRis(userChoice,pariDispari);
 
 // DEBUG \\
+console.log("Scelta utente: ",userChoice);
 console.log("Numero generato da PC: ",randomN);
 console.log("Numero utente: ",userNumber);
 console.log("Somma numeri: ",userPcsum);
