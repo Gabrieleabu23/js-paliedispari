@@ -10,7 +10,7 @@ function invia(){
     // userNumber= parseInt(document.getElementById("boh2").value);
     // break;
     // }
-    document.querySelector("h1").innerHTML='';
+    document.querySelector(".content").innerHTML='';
 
 
     let userChoice=document.getElementById("boh3").value;
