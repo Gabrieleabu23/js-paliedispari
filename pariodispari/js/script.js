@@ -1,13 +1,19 @@
-let userNumber=parseInt( prompt("Inserisci un numero compreso da 1 a 5"));
+alert("IL RISULTATO È IN CONSOLE!");
+let userNumber=parseInt( prompt("Inserisci un numero compreso tra 1 e 5"));
 let randomN=0; let userPcsum = 0;let pariDispari=0;
 
+
+// CICLO WHILE PER ASSICURARCI CHE L'UTENTE INSERISCA UN NUMERO COMPRESO DA 1 E 5
+while((userNumber <1 || userNumber >5)){
+    alert("Numero non valido!")
+    userNumber= parseInt( prompt("Inserisci un numero compreso tra 1 e 5"));
+}
+
+// CALL DELLE FUNCTION IN ORDINE DI ESECUZIONE
 randomN= pcNumber(randomN);
 userPcsum= sumPcUser(userNumber,randomN)
 pariDispari= pariodispari(userPcsum);
-while(userNumber <1 || userNumber >5){
-    alert("Numero non valido!")
-    userNumber= parseInt( prompt("Inserisci un numero compreso da 1 a 5"));
-}
+
 // DEBUG \\
 console.log("Numero generato da PC: ",randomN);
 console.log("Numero utente: ",userNumber);
