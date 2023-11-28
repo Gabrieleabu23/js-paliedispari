@@ -3,3 +3,17 @@
     padding: 0;
     margin: 0;
 }
+.img_container{
+    background-image: url(https://cdn.andi.it/wp-content/uploads/2022/04/07174431/Immagini_Sito_parole-del-vocabolario.jpg);
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.bg_transparent_black{
+    background-color: rgba(0,0,0,0.5);
+    height: 300px;
+
+}
+h4{
+    color:#1fc678;
+}
