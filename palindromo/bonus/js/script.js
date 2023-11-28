@@ -1,5 +1,6 @@
 function palindromo(){
     // PRENDO IL VALORE DALL'HTML TRAMITE ID
+document.getElementById("none_display").classList.remove("d-none");
 const parola= document.getElementById("parola").value;
 let inviaRisultato= document.querySelector("h4");
 
