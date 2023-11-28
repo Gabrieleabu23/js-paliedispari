@@ -1,15 +1,9 @@
-// alert("IL RISULTATO È IN CONSOLE!");
-var flag=0;
 
 function invia(){
     let createDiv;
     let randomN=0; let userPcsum = 0;let pariDispari=0; let wonorNot;
     let userNumber= parseInt(document.getElementById("boh2").value);
-    // while((userNumber <1 || userNumber >5)){
-    // alert("Numero non valido!")
-    // userNumber= parseInt(document.getElementById("boh2").value);
-    // break;
-    // }
+
     document.querySelector(".content").innerHTML='';
 
 
@@ -17,8 +11,6 @@ function invia(){
     randomN= pcNumber(randomN);
     userPcsum= sumPcUser(userNumber,randomN)
     pariDispari= pariodispari(userPcsum);
-    // wonorNot= indovinatoRis(userChoice,pariDispari);
-    
     createDiv= createDivs(userChoice,randomN,userNumber,userPcsum,pariDispari);
     
     // // DEBUG \\
@@ -32,29 +24,11 @@ let userNumber=document.getElementById("boh2").value;
 let randomN=0; let userPcsum = 0;let pariDispari=0; let wonorNot;
 
 
-// // CICLO WHILE PER ASSICURARCI CHE L'UTENTE INSERISCA UN NUMERO COMPRESO DA 1 E 5
-// while((userNumber <1 || userNumber >5)){
-//     alert("Numero non valido!")
-//     userNumber= parseInt( prompt("Inserisci un numero compreso tra 1 e 5"));
-// }
-// const userChoice= prompt("Secondo te, uscirà un numero pari o dispari?");
-// CALL DELLE FUNCTION IN ORDINE DI ESECUZIONE
-// randomN= pcNumber(randomN);
-// userPcsum= sumPcUser(userNumber,randomN)
-// pariDispari= pariodispari(userPcsum);
-// wonorNot= indovinatoRis(userChoice,pariDispari);
-
-// // DEBUG \\
-// console.log("Scelta utente: ",userChoice);
-// console.log("Numero generato da PC: ",randomN);
-// console.log("Numero utente: ",userNumber);
-// console.log("Somma numeri: ",userPcsum);
-// console.log("Risultato:",pariDispari);
-
-function createDivs(userChoice,randomN,userNumber,userPcsum,pariDispari,wonorNot,flag){
+function createDivs(userChoice,randomN,userNumber,userPcsum,pariDispari,wonorNot){
     const vet= [userChoice,randomN,userNumber,userPcsum,pariDispari,wonorNot];
-    for (let i =0; i<=5;i++){
+    for (let i =0; i<6;i++){
         const divs=document.createElement("div");
+        divs.classList.add("stile_divs");
         switch (i){
             case 0:
                 divs.innerHTML="Scelta utente: "+vet[i];
@@ -73,28 +47,35 @@ function createDivs(userChoice,randomN,userNumber,userPcsum,pariDispari,wonorNot
                 break;
             case 5:
                 indovinatoRis(userChoice,pariDispari);
-                flag=1;
                 break;
             
         }
-        document.querySelector(".content").append(divs)
+        document.querySelector(".content").append(divs);
+        document.querySelector(".content").style.marginTop="100px";
+        
+        
     }
 }
 
 // // FUNZIONE PER SCOPRIRE SE l'UTENTE HA INDOVINATO SE IL NUMERO È PARI O DISPARI
 function indovinatoRis(userChoice,pariDispari){
     const divs=document.createElement("div");
+    divs.classList.add("stile_divs");
     if(userChoice === "pari" && pariDispari === "Pari"){
+        divs.style.color="green";
         divs.append("indovinato!");
     }
     else if(userChoice === "dispari" && pariDispari === "Dispari"){
+        divs.style.color="green";
         divs.append("indovinato!");
         // console.log("No, non hai indovinato");
     }
     else if(userChoice === "pari" && pariDispari === "Dispari"){
+        divs.style.color="red";
         divs.append("Mi dispiace, non hai indovinato! È un numero: ",pariDispari);
     }
     else{
+        divs.style.color="red";
         divs.append("Mi dispiace, non hai indovinato! È un numero: ",pariDispari);
     }
     document.querySelector(".content").append(divs)
